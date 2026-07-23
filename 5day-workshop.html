@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5-Day Launch Your AI-Powered Business Workshop | For Women Homemakers, Coaches & Consultants</title>
+<meta name="description" content="A 5-day live workshop for women homemakers, coaches and consultants to launch an AI-powered business online — for just ₹51.">
+
+<!-- ═══════════════════════════════════════════════════════════
+  EDIT CHECKLIST — search for [EDIT] to find every spot:
+  1. [EDIT-DATES]   workshop dates (currently Aug 3–7, 2026)
+  2. [EDIT-TIMER]   countdown target date in the <script> at bottom
+  3. [EDIT-PAY]     Razorpay ₹51 payment link (2 places)
+  4. [EDIT-BIO]     Vaishnavi's bio, photo, numbers
+  5. [EDIT-PROOF]   testimonials — REAL ones only, placeholders marked
+  6. [EDIT-PIXEL]   Meta Pixel ID
+  7. [EDIT-SPOTS]   spots-taken counter (update manually, keep honest)
+═══════════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- [EDIT-PIXEL] Meta Pixel — paste your pixel base code here -->
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --coral: #EB6347;
+    --orange: #F47B25;
+    --grad: linear-gradient(135deg, #EB6347 0%, #F47B25 100%);
+    --dark: #262626;
+    --gray: #555555;
+    --light: #F8F5F2;
+    --cream: #FFF4EC;
+    --green: #1E9E54;
+    --red: #D93025;
+    --white: #FFFFFF;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Onest', system-ui, sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  section { padding: 64px 20px; }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 800; line-height: 1.2; text-align: center; margin-bottom: 12px; }
+  .sub { text-align: center; color: var(--gray); max-width: 640px; margin: 0 auto 40px; font-size: 17px; }
+
+  /* CTA buttons */
+  .btn {
+    display: inline-block;
+    background: var(--grad);
+    color: #fff;
+    font-weight: 800;
+    font-size: 18px;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(235,99,71,0.35);
+    transition: transform .15s ease, box-shadow .15s ease;
+    text-align: center;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(235,99,71,0.45); }
+  .btn-block { display: block; max-width: 480px; margin: 0 auto; }
+  .guarantee-line { text-align: center; font-size: 14px; color: var(--gray); margin-top: 14px; }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--dark);
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .topbar b { color: #FFC48A; }
+
+  /* ── HERO ── */
+  .hero { background: var(--cream); text-align: center; padding: 56px 20px 64px; }
+  .hero-kicker {
+    display: inline-block;
+    background: #fff;
+    border: 1.5px solid var(--coral);
+    color: var(--coral);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 5.4vw, 54px);
+    font-weight: 900;
+    line-height: 1.12;
+    max-width: 860px;
+    margin: 0 auto 16px;
+  }
+  .hero h1 .hl { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero-sub { font-size: clamp(17px, 2.4vw, 21px); color: var(--gray); max-width: 700px; margin: 0 auto 28px; font-weight: 500; }
+  .chips { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 26px; }
+  .chip {
+    background: #fff;
+    border: 1px solid #EDE2D8;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .chip.hot { border-color: var(--coral); color: var(--coral); }
+  .no-list { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin-bottom: 30px; font-weight: 600; font-size: 15px; }
+  .no-list span::before { content: '✅ '; }
+
+  /* countdown */
+  .count { display: flex; gap: 10px; justify-content: center; margin-bottom: 30px; }
+  .count .cell {
+    background: var(--dark); color: #fff; border-radius: 12px;
+    min-width: 74px; padding: 12px 8px;
+  }
+  .count .num { font-size: 30px; font-weight: 900; line-height: 1; display: block; }
+  .count .lbl { font-size: 11px; letter-spacing: 1.5px; opacity: .7; }
+
+  /* spots bar */
+  .spots { max-width: 420px; margin: 0 auto 26px; }
+  .spots-track { background: #F0E4DA; border-radius: 20px; height: 14px; overflow: hidden; }
+  .spots-fill { background: var(--grad); height: 100%; border-radius: 20px; }
+  .spots-label { font-size: 14px; font-weight: 700; color: var(--coral); margin-top: 8px; }
+
+  /* ── PAIN SECTION ── */
+  .pain { background: var(--white); }
+  .pain-card, .gain-card {
+    background: var(--light);
+    border-radius: 16px;
+    padding: 18px 22px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 16.5px;
+    max-width: 760px;
+    margin-left: auto; margin-right: auto;
+  }
+  .pain-card .ico { color: var(--red); font-weight: 900; flex-shrink: 0; }
+  .gain-card { background: #F0FAF4; }
+  .gain-card .ico { color: var(--green); font-weight: 900; flex-shrink: 0; }
+  .punch { text-align: center; font-size: 22px; font-weight: 800; margin-top: 28px; }
+
+  /* ── DAYS ── */
+  .days { background: var(--light); }
+  .day-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+    border-left: 6px solid var(--coral);
+  }
+  .day-tag {
+    display: inline-block;
+    background: var(--grad);
+    color: #fff;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .day-card h3 { font-size: 21px; font-weight: 800; margin-bottom: 12px; }
+  .day-card ul { list-style: none; }
+  .day-card li { padding: 5px 0; color: var(--gray); font-size: 15.5px; }
+  .day-card li::before { content: '✦ '; color: var(--coral); font-weight: 700; }
+  .honesty {
+    text-align: center; font-style: italic; color: var(--gray);
+    max-width: 640px; margin: 30px auto 0; font-size: 15.5px;
+  }
+
+  /* ── FOUNDER ── */
+  .founder { background: var(--white); }
+  .founder-grid { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: start; max-width: 900px; margin: 0 auto; }
+  .founder-photo {
+    background: var(--cream);
+    border-radius: 20px;
+    aspect-ratio: 3/4;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gray); font-size: 14px; text-align: center; padding: 20px;
+    border: 2px dashed #E5D5C5;
+  }
+  .founder-copy h2 { text-align: left; }
+  .founder-role { color: var(--coral); font-weight: 700; margin-bottom: 16px; }
+  .founder-copy p { color: var(--gray); margin-bottom: 14px; font-size: 16px; }
+  .stats { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 22px; }
+  .stat { background: var(--light); border-radius: 14px; padding: 16px 22px; text-align: center; flex: 1; min-width: 140px; }
+  .stat .n { font-size: 26px; font-weight: 900; color: var(--coral); display: block; }
+  .stat .l { font-size: 13px; color: var(--gray); }
+
+  /* ── TESTIMONIALS ── */
+  .testi { background: var(--light); }
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .testi-card {
+    background: #fff; border-radius: 16px; padding: 24px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  }
+  .testi-card .stars { color: #F5A623; letter-spacing: 3px; margin-bottom: 10px; }
+  .testi-card p { font-size: 15px; color: var(--gray); margin-bottom: 14px; }
+  .testi-card .who { font-weight: 800; font-size: 15px; }
+  .testi-card .role { font-size: 13px; color: var(--coral); }
+  .placeholder-note {
+    background: #FFF8E1; border: 1.5px dashed #E6A817; border-radius: 12px;
+    padding: 14px 18px; font-size: 14px; color: #8a6d00; max-width: 720px; margin: 0 auto 28px; text-align: center;
+  }
+
+  /* ── VALUE STACK ── */
+  .stack { background: var(--white); }
+  .stack-item {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    background: var(--light); border-radius: 14px; padding: 18px 24px; margin-bottom: 12px;
+    max-width: 700px; margin-left: auto; margin-right: auto;
+  }
+  .stack-item .t { font-weight: 700; font-size: 16px; }
+  .stack-item .d { font-size: 14px; color: var(--gray); }
+  .stack-item .v { font-weight: 800; color: var(--coral); white-space: nowrap; }
+  .stack-total {
+    max-width: 700px; margin: 24px auto 0; text-align: center;
+    background: var(--cream); border-radius: 20px; padding: 30px;
+  }
+  .stack-total .was { font-size: 18px; color: var(--gray); text-decoration: line-through; }
+  .stack-total .now { font-size: 46px; font-weight: 900; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .stack-total .save { font-weight: 800; color: var(--green); font-size: 18px; }
+
+  /* ── WHY 51 / GUARANTEE ── */
+  .why { background: var(--light); }
+  .why-card, .guarantee-card {
+    max-width: 720px; margin: 0 auto; background: #fff;
+    border-radius: 20px; padding: 36px; box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+  }
+  .why-card p, .guarantee-card p { color: var(--gray); margin-bottom: 14px; font-size: 16.5px; }
+  .guarantee-card { border: 2px solid var(--green); }
+  .guarantee-card h2 { margin-bottom: 18px; }
+  .guarantee-card ul { list-style: none; margin: 0 0 16px; }
+  .guarantee-card li { padding: 6px 0; font-weight: 600; }
+  .guarantee-card li::before { content: '✅ '; }
+
+  /* ── FAQ ── */
+  .faq { background: var(--white); }
+  details {
+    max-width: 720px; margin: 0 auto 12px; background: var(--light);
+    border-radius: 14px; padding: 18px 24px; cursor: pointer;
+  }
+  details summary { font-weight: 700; font-size: 16.5px; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  details summary::after { content: '+'; font-size: 24px; color: var(--coral); font-weight: 400; }
+  details[open] summary::after { content: '–'; }
+  details p { color: var(--gray); margin-top: 12px; font-size: 15.5px; }
+
+  /* ── TWO CHOICES ── */
+  .choices { background: var(--light); }
+  .choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 800px; margin: 0 auto 36px; }
+  .choice { border-radius: 20px; padding: 30px; }
+  .choice.bad { background: #FBEDEA; }
+  .choice.good { background: #EAF7EF; }
+  .choice h3 { font-size: 18px; font-weight: 800; margin-bottom: 16px; letter-spacing: 1px; }
+  .choice ul { list-style: none; }
+  .choice li { padding: 7px 0; font-size: 15.5px; }
+  .choice.bad li::before { content: '❌ '; }
+  .choice.good li::before { content: '✅ '; }
+  .choice-punch { text-align: center; font-size: 24px; font-weight: 900; margin-bottom: 26px; }
+
+  /* ── REGISTER ── */
+  .register { background: var(--cream); }
+  .reg-card {
+    max-width: 520px; margin: 0 auto; background: #fff;
+    border-radius: 24px; padding: 40px 36px; box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  }
+  .reg-card label { font-weight: 700; font-size: 14px; display: block; margin: 16px 0 6px; }
+  .reg-card input {
+    width: 100%; padding: 14px 16px; border: 1.5px solid #E5D5C5;
+    border-radius: 12px; font-size: 16px; font-family: inherit;
+  }
+  .reg-card input:focus { outline: none; border-color: var(--coral); }
+  .reg-card .btn { width: 100%; margin-top: 24px; border: none; cursor: pointer; font-family: inherit; }
+
+  /* ── PS ── */
+  .ps { background: var(--white); text-align: center; }
+  .ps-block { max-width: 640px; margin: 0 auto 34px; }
+  .ps-block h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+  .ps-block p { color: var(--gray); font-size: 16.5px; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--dark); color: #999; text-align: center; padding: 34px 20px; font-size: 13px; }
+  footer p { max-width: 640px; margin: 0 auto 10px; }
+
+  /* ── STICKY MOBILE BAR ── */
+  .sticky-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+    background: #fff; border-top: 1px solid #eee;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 16px; gap: 12px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+  }
+  .sticky-bar .info { font-size: 13px; font-weight: 700; line-height: 1.35; }
+  .sticky-bar .info .price { color: var(--coral); }
+  .sticky-bar .btn { padding: 12px 22px; font-size: 15px; white-space: nowrap; }
+  body { padding-bottom: 70px; }
+
+  @media (max-width: 720px) {
+    .founder-grid { grid-template-columns: 1fr; }
+    .founder-photo { max-width: 280px; margin: 0 auto; }
+    .choice-grid { grid-template-columns: 1fr; }
+    section { padding: 48px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── TOP BAR ── -->
+<div class="topbar">🚀 5-Day Live Workshop For 100 Women <b>(Aug 3–7)</b> : Launch Your AI-Powered Business — Without Tech Skills <!-- [EDIT-DATES] --></div>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-kicker">For Women Homemakers, Coaches &amp; Consultants</div>
+  <h1>The 5-Day <span class="hl">Launch Your AI-Powered Business</span> Workshop</h1>
+  <p class="hero-sub">Go from "I have skills but no idea where to start" to a clear, AI-powered online business — in 5 days of live handholding.</p>
+
+  <div class="chips">
+    <div class="chip">📅 Aug 3–7 <!-- [EDIT-DATES] --></div>
+    <div class="chip">⏰ 11 AM IST</div>
+    <div class="chip hot">🔥 Only ₹51</div>
+    <div class="chip">🚫 No Recordings Shared</div>
+  </div>
+
+  <div class="no-list">
+    <span>No Tech Skills Needed</span>
+    <span>No Huge Investment</span>
+    <span>No Business Experience Required</span>
+  </div>
+
+  <div class="count" id="countdown">
+    <div class="cell"><span class="num" id="cd-d">--</span><span class="lbl">DAYS</span></div>
+    <div class="cell"><span class="num" id="cd-h">--</span><span class="lbl">HRS</span></div>
+    <div class="cell"><span class="num" id="cd-m">--</span><span class="lbl">MIN</span></div>
+    <div class="cell"><span class="num" id="cd-s">--</span><span class="lbl">SEC</span></div>
+  </div>
+
+  <!-- [EDIT-SPOTS] update data-taken as real registrations come in -->
+  <div class="spots" id="spots" data-taken="0" data-total="100">
+    <div class="spots-track"><div class="spots-fill" id="spots-fill" style="width:0%"></div></div>
+    <div class="spots-label" id="spots-label">Registrations open — limited to 100 women</div>
+  </div>
+
+  <a href="#register" class="btn btn-block">REGISTER NOW — LIMITED TO 100 WOMEN</a>
+  <p class="guarantee-line">✅ 100% Money-Back "Show Up &amp; Win" Guarantee</p>
+</header>
+
+<!-- ── PAIN ── -->
+<section class="pain">
+  <div class="wrap">
+    <h2>If you're a woman who…</h2>
+    <p class="sub">Any of these sound familiar?</p>
+    <div class="pain-card"><span class="ico">❌</span> Has real skills — cooking, teaching, coaching, consulting, designing — but no idea how to turn them into income online</div>
+    <div class="pain-card"><span class="ico">❌</span> Watches other women build online businesses and thinks "I could do that"… but never knows where to start</div>
+    <div class="pain-card"><span class="ico">❌</span> Feels intimidated by "tech" — websites, funnels, ads, AI tools all sound like another language</div>
+    <div class="pain-card"><span class="ico">❌</span> Started something once, got overwhelmed, and quietly dropped it</div>
+    <div class="pain-card"><span class="ico">❌</span> Wants her own income and identity — not just to be known as someone's wife, mom, or employee</div>
+    <div class="pain-card"><span class="ico">❌</span> Keeps waiting for the "right time" that never comes</div>
+    <p class="punch">This 5-day workshop was built exactly for you.</p>
+  </div>
+</section>
+
+<!-- ── GAINS ── -->
+<section class="pain" style="background: var(--light);">
+  <div class="wrap">
+    <h2>In Just 5 Days, You'll Get:</h2>
+    <p class="sub">Not theory. A business you can actually see taking shape.</p>
+    <div class="gain-card"><span class="ico">✅</span> Total clarity on which business is right for YOUR skills, time, and life situation</div>
+    <div class="gain-card"><span class="ico">✅</span> One clear niche and one clear offer — no more "I'll help everyone with everything"</div>
+    <div class="gain-card"><span class="ico">✅</span> Hands-on experience using AI tools to create your content, your offer, and your business assets — live, with guidance</div>
+    <div class="gain-card"><span class="ico">✅</span> A simple client-attraction system you can run yourself — no agency, no big budget</div>
+    <div class="gain-card"><span class="ico">✅</span> A 90-day launch roadmap so you know exactly what to do after Day 5</div>
+    <p class="punch">Everything designed for Indian women — around family responsibilities, not against them.</p>
+  </div>
+</section>
+
+<!-- ── 5 DAYS ── -->
+<section class="days">
+  <div class="wrap">
+    <h2>What You'll Learn In These 5 Powerful Days</h2>
+    <p class="sub">Each session is live at 11 AM with Q&amp;A. Show up, do the work, build as you go.</p>
+
+    <div class="day-card">
+      <span class="day-tag">DAY 1</span>
+      <h3>🧠 Why You Haven't Started Yet (And Why It's NOT Your Fault)</h3>
+      <ul>
+        <li>The real reasons talented women stay stuck at "someday" — and how to break the loop</li>
+        <li>Why AI has made this the single best time in history for a homemaker or coach to start online</li>
+        <li>The 3 business models that work for women with limited time (and the ones to avoid)</li>
+        <li>Get instant clarity on what's actually been missing — it's a system, not more motivation</li>
+      </ul>
+    </div>
+
+    <div class="day-card">
+      <span class="day-tag">DAY 2</span>
+      <h3>💎 Niche Clarity + One Offer That Actually Sells</h3>
+      <ul>
+        <li>Why "helping everyone" silently kills your income before it starts</li>
+        <li>Find the profitable niche hidden inside skills you already have</li>
+        <li>Turn that niche into ONE clear, confident offer people will pay for</li>
+        <li>Price it so clients say yes — without you feeling awkward asking</li>
+      </ul>
+    </div>
+
+    <div class="day-card">
+      <span class="day-tag">DAY 3</span>
+      <h3>🤖 Your AI Toolkit — Build Your Business Assets Live</h3>
+      <ul>
+        <li>The exact AI tools that replace a designer, copywriter, and content team — no tech skills needed</li>
+        <li>Create your content, captions, and offer materials with AI, live in the session</li>
+        <li>Watch a landing page get built in front of you — then learn to do it yourself</li>
+        <li>The prompts and templates my clients use every single day (yours to keep)</li>
+      </ul>
+    </div>
+
+    <div class="day-card">
+      <span class="day-tag">DAY 4</span>
+      <h3>⚙️ A Simple Client-Getting System That Runs Without You</h3>
+      <ul>
+        <li>Why posting randomly on Instagram keeps you invisible — and what to do instead</li>
+        <li>The simple funnel structure that turns strangers into paying clients on autopilot</li>
+        <li>How Meta ads actually work — no jargon, no agency, no burning money</li>
+        <li>Design your own income system on paper (no tools needed yet)</li>
+      </ul>
+    </div>
+
+    <div class="day-card">
+      <span class="day-tag">DAY 5</span>
+      <h3>🚀 Your 90-Day Launch Roadmap</h3>
+      <ul>
+        <li>Turn everything from Days 1–4 into a clear 90-day action plan</li>
+        <li>What actually helps women launch and grow — and what keeps them stuck for years</li>
+        <li>Shift from confusion and fear to clarity and confidence</li>
+        <li>Decide your next step with certainty — including how we can keep working together if you want deeper support</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center; margin-top: 34px;">
+      <a href="#register" class="btn">I WANT THIS — REGISTER NOW</a>
+    </div>
+
+    <p class="honesty">No one can hand you a running business in five days, and we won't pretend otherwise. What you'll leave with is direction, clarity, real hands-on practice with AI — and a system you can finally see.</p>
+  </div>
+</section>
+
+<!-- ── FOUNDER ── [EDIT-BIO] entire section -->
+<section class="founder">
+  <div class="wrap">
+    <div class="founder-grid">
+      <div class="founder-photo">[EDIT-BIO]<br>Add Vaishnavi's photo here<br>(professional, warm, smiling)</div>
+      <div class="founder-copy">
+        <h2>Hi, I'm Vaishnavi</h2>
+        <p class="founder-role">AI &amp; Digital Business Coach — ScaleUp Genius Hub</p>
+        <p>[EDIT-BIO] Write your honest origin story here in 3 short paragraphs: (1) where you started and what you struggled with, (2) what changed when you learned AI + digital systems, (3) who you've helped since. Keep it true — this section carries the whole page.</p>
+        <p>[EDIT-BIO] If you have client results, name them specifically (with permission): "Helped an ethnic-wear boutique grow its Instagram from zero to consistent DM orders" — real and specific beats big and vague.</p>
+        <p><em>"Every woman deserves an income and an identity of her own. AI just made that 10x more possible — let me show you how."</em></p>
+        <div class="stats">
+          <div class="stat"><span class="n">[EDIT]</span><span class="l">Women Trained</span></div>
+          <div class="stat"><span class="n">[EDIT]</span><span class="l">Businesses Set Up</span></div>
+          <div class="stat"><span class="n">[EDIT]</span><span class="l">AI Systems Built</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── [EDIT-PROOF] -->
+<section class="testi">
+  <div class="wrap">
+    <h2>What Women Like You Are Saying</h2>
+    <div class="placeholder-note">⚠️ [EDIT-PROOF] These are PLACEHOLDERS showing the format. Replace with real testimonials (with permission) before going live — or delete this section for cohort 1 and add real ones for cohort 2. Never copy another coach's testimonials.</div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"[EDIT-PROOF — real quote here. Best format: 'I was X, now I'm Y, and the thing that made the difference was Z.']"</p>
+        <div class="who">[Name]</div>
+        <div class="role">[Profession, City]</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"[EDIT-PROOF — real quote here]"</p>
+        <div class="who">[Name]</div>
+        <div class="role">[Profession, City]</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"[EDIT-PROOF — real quote here]"</p>
+        <div class="who">[Name]</div>
+        <div class="role">[Profession, City]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VALUE STACK ── -->
+<section class="stack">
+  <div class="wrap">
+    <h2>What You Get</h2>
+    <p class="sub">Everything you need to launch your AI-powered business in 5 days</p>
+    <div class="stack-item"><div><div class="t">📹 5 Live Training Sessions</div><div class="d">Interactive sessions with Q&amp;A and live AI demonstrations</div></div><div class="v">Worth ₹15,000</div></div>
+    <div class="stack-item"><div><div class="t">📚 Workshop Workbook</div><div class="d">Step-by-step exercises to implement each day's learnings</div></div><div class="v">Worth ₹3,000</div></div>
+    <div class="stack-item"><div><div class="t">💬 Private WhatsApp Community</div><div class="d">Connect with like-minded women for support and accountability</div></div><div class="v">Worth ₹5,000</div></div>
+    <div class="stack-item"><div><div class="t">🤖 AI Prompt &amp; Template Pack</div><div class="d">Copy-paste prompts for content, offers, and client attraction</div></div><div class="v">Worth ₹7,000</div></div>
+    <div class="stack-total">
+      <div>TOTAL VALUE: <span class="was">₹30,000</span></div>
+      <div class="now">Just ₹51</div>
+      <div class="save">YOU SAVE ₹29,949</div>
+      <div style="margin-top:22px;"><a href="#register" class="btn">YES! I'M IN — REGISTER NOW</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY ₹51 ── -->
+<section class="why">
+  <div class="wrap">
+    <div class="why-card">
+      <h2>Why Only ₹51?</h2>
+      <p>I know what it's like to invest in yourself when the money isn't "yours" to spend freely. Many of us have to think twice before spending even on ourselves.</p>
+      <p><b>₹51 is just to make sure you're serious.</b> It's less than one plate of chaat. But it changes everything — because when you pay even a little, you show up. And when you show up, things change.</p>
+      <p>And honestly? I'm betting on you. I want to find a small group of serious, passionate women to work with closely and help launch their businesses properly. This workshop is how I find them — and how I make sure every woman who can't afford premium programs still gets real value.</p>
+      <p><b>Fair deal?</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── GUARANTEE ── -->
+<section class="why" style="background: var(--white); padding-top: 0;">
+  <div class="wrap">
+    <div class="guarantee-card">
+      <h2>🛡️ Our "Show Up &amp; Win" Guarantee</h2>
+      <p>I'm so confident this workshop will move you forward that I'm making it completely risk-free.</p>
+      <p><b>If you:</b></p>
+      <ul>
+        <li>Attend all 5 days</li>
+        <li>Do the exercises</li>
+        <li>Still don't feel it was worth your time</li>
+      </ul>
+      <p>I'll personally refund your ₹51. No questions asked. No hard feelings.</p>
+      <p><b>That's my promise to you.</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq">
+  <div class="wrap">
+    <h2>Got Questions? We've Got Answers.</h2>
+    <p class="sub">Everything you might be wondering before you join</p>
+
+    <details>
+      <summary>I'm a complete beginner with zero tech knowledge. Is this for me?</summary>
+      <p>Especially for you. Every tool we use is shown live, step by step, in plain language. If you can use WhatsApp, you can do everything in this workshop.</p>
+    </details>
+    <details>
+      <summary>I'm "just" a homemaker — I don't have a business yet. Can I still join?</summary>
+      <p>Yes — that's exactly who this is designed for. You don't need a business, a following, or a fancy degree. You need a skill (everyone has one) and 5 days of showing up. Day 1 and 2 will help you discover what your business should even be.</p>
+    </details>
+    <details>
+      <summary>What if I miss a day?</summary>
+      <p>The sessions are live and recordings are NOT shared — that's deliberate. Women who attend live get results; collectors of recordings don't. Block 11 AM to 12:30 PM for these 5 days like a doctor's appointment for your future.</p>
+    </details>
+    <details>
+      <summary>Why is it only ₹51?</summary>
+      <p>Because price shouldn't be the reason a woman doesn't start. ₹51 filters out the non-serious without shutting anyone out. (And yes — at the end I'll share how we can work together more deeply, if you want that. No pressure either way.)</p>
+    </details>
+    <details>
+      <summary>What do I need to participate?</summary>
+      <p>A phone or laptop, an internet connection, a notebook, and 90 minutes a day for 5 days. That's it. All AI tools we use have free versions.</p>
+    </details>
+    <details>
+      <summary>Is there a money-back guarantee?</summary>
+      <p>Yes. Attend all 5 days, do the exercises, and if you still feel it wasn't worth your time, your ₹51 comes back to you. No questions asked.</p>
+    </details>
+    <details>
+      <summary>Will I get access to Vaishnavi directly?</summary>
+      <p>Yes — live Q&amp;A in every session, plus the private WhatsApp community where I answer questions throughout the 5 days.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ── TWO CHOICES ── -->
+<section class="choices">
+  <div class="wrap">
+    <h2>Two Choices</h2>
+    <p class="sub">One week from now, you'll be in one of two places.</p>
+    <div class="choice-grid">
+      <div class="choice bad">
+        <h3>CHOICE 1:</h3>
+        <ul>
+          <li>Keep waiting for the "right time"</li>
+          <li>Keep scrolling past other women's success stories</li>
+          <li>Stay dependent, stay invisible, stay "someday"</li>
+          <li>Let AI pass you by while others use it to build</li>
+        </ul>
+      </div>
+      <div class="choice good">
+        <h3>CHOICE 2:</h3>
+        <ul>
+          <li>Take action for just ₹51</li>
+          <li>Learn systems that actually work for women like you</li>
+          <li>Build your business foundations in 5 days, live</li>
+          <li>Finally start the business (and identity) you deserve</li>
+        </ul>
+      </div>
+    </div>
+    <p class="choice-punch">The Choice Is Yours.</p>
+    <div style="text-align:center;"><a href="#register" class="btn">YES! I'M IN — REGISTER NOW</a></div>
+  </div>
+</section>
+
+<!-- ── REGISTER ── -->
+<section class="register" id="register">
+  <div class="wrap">
+    <h2>Reserve Your Spot Now</h2>
+    <p class="sub">5 days · Live at 11 AM · Only ₹51 · Limited to 100 women</p>
+    <div class="reg-card">
+      <!-- Wire this form to your Make.com webhook (see automation/make-scenario-blueprint.json),
+           then redirect to the Razorpay payment link. Or skip the form and link the button
+           directly to a Razorpay ₹51 payment page that collects name/email/phone. -->
+      <form id="reg-form" action="#" method="POST">
+        <label for="f-name">Your Name</label>
+        <input type="text" id="f-name" name="name" placeholder="Full name" required>
+        <label for="f-email">Email</label>
+        <input type="email" id="f-email" name="email" placeholder="you@example.com" required>
+        <label for="f-phone">WhatsApp Number</label>
+        <input type="tel" id="f-phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+        <!-- [EDIT-PAY] point this to your ₹51 Razorpay payment link -->
+        <button type="submit" class="btn">PAY ₹51 &amp; RESERVE MY SPOT →</button>
+      </form>
+      <p class="guarantee-line">🔒 Secure payment · ✅ Show Up &amp; Win Guarantee</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── P.S. ── -->
+<section class="ps">
+  <div class="wrap">
+    <div class="ps-block">
+      <h3>P.S. Still thinking?</h3>
+      <p>I get it. You've probably seen big promises online before. But this is ₹51 — less than an auto ride. And you get it back if you show up and don't find it valuable. What do you actually have to lose?</p>
+    </div>
+    <div class="ps-block">
+      <h3>P.P.S. One year from now…</h3>
+      <p>You'll either be in the exact same place, still wondering "what if"… or you'll look back at this ₹51 as the day everything changed. Which will it be?</p>
+    </div>
+    <a href="#register" class="btn">I CHOOSE TO START</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>This site is not a part of the Google website or Google Inc, or the Facebook/Meta website or Meta Platforms Inc. This site is not endorsed by Google or Meta in any way.</p>
+  <p>Results shared are individual experiences and are not a guarantee of income. Your results depend on your effort, consistency, and circumstances.</p>
+  <p>© 2026 ScaleUp Genius Hub. All rights reserved. · <a href="privacy-policy.html" style="color:#bbb;">Privacy</a> · <a href="terms.html" style="color:#bbb;">Terms</a> · <a href="refund-policy.html" style="color:#bbb;">Refunds</a></p>
+</footer>
+
+<!-- ── STICKY MOBILE BAR ── -->
+<div class="sticky-bar">
+  <div class="info">📅 Aug 3–7 · ⏰ 11 AM<br><span class="price">🔥 Only ₹51</span></div> <!-- [EDIT-DATES] -->
+  <a href="#register" class="btn">REGISTER NOW</a>
+</div>
+
+<script>
+  // [EDIT-TIMER] countdown target — set to workshop start (Day 1, 11 AM IST)
+  var TARGET = new Date('2026-08-03T11:00:00+05:30').getTime();
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  function tick(){
+    var diff = TARGET - Date.now();
+    if (diff < 0) diff = 0;
+    document.getElementById('cd-d').textContent = pad(Math.floor(diff / 86400000));
+    document.getElementById('cd-h').textContent = pad(Math.floor(diff % 86400000 / 3600000));
+    document.getElementById('cd-m').textContent = pad(Math.floor(diff % 3600000 / 60000));
+    document.getElementById('cd-s').textContent = pad(Math.floor(diff % 60000 / 1000));
+  }
+  tick(); setInterval(tick, 1000);
+
+  // [EDIT-SPOTS] spots bar — reads data-taken/data-total on #spots; update data-taken manually
+  (function(){
+    var el = document.getElementById('spots');
+    var taken = parseInt(el.getAttribute('data-taken'), 10);
+    var total = parseInt(el.getAttribute('data-total'), 10);
+    if (taken > 0) {
+      document.getElementById('spots-fill').style.width = Math.min(100, taken / total * 100) + '%';
+      document.getElementById('spots-label').textContent = '[' + taken + '/' + total + ' Spots Taken]';
+    }
+  })();
+
+  // [EDIT-PAY] form: send to Make webhook then redirect to Razorpay payment link
+  document.getElementById('reg-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var WEBHOOK_URL = '';        // paste your Make.com webhook URL
+    var PAYMENT_LINK = '';       // paste your Razorpay ₹51 payment link
+    var data = {
+      name: document.getElementById('f-name').value,
+      email: document.getElementById('f-email').value,
+      phone: document.getElementById('f-phone').value
+    };
+    var go = function(){ if (PAYMENT_LINK) window.location.href = PAYMENT_LINK; else alert('Payment link not configured yet — add your Razorpay link in the script section.'); };
+    if (WEBHOOK_URL) {
+      fetch(WEBHOOK_URL, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) })
+        .then(go).catch(go);
+    } else { go(); }
+  });
+</script>
+
+</body>
+</html>
