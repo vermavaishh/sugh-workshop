@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Rise Beyond Autoimmune™</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&display=swap');
+  *,*::before,*::after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0}
+  /* ══════════════════════════════════════
+  THANK YOU PAGE — Rise Beyond Autoimmune
+  Prefix: rba-   |   Zero var()   |   No JS
+  ══════════════════════════════════════ */
+  /* ── PAGE BODY ── */
+  .rba-ty-page{
+    min-height:100vh;
+    background:linear-gradient(160deg,#FFFBF5 0%,#f7eee2 40%,#F3E6CF 70%,#eddfc4 100%);
+    font-family:'Onest',sans-serif;
+    display:flex;
+    flex-direction:column;
+  }
+  /* ── DECORATIVE ORBS ── */
+  .rba-ty-orb{
+    position:fixed;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:0;
+  }
+  .rba-ty-orb-1{
+    width:520px;
+    height:520px;
+    top:-160px;
+    right:-140px;
+    background:radial-gradient(circle,rgba(222,148,0,0.09) 0%,rgba(166,124,166,0.06) 45%,transparent 70%);
+    animation:rba-ty-float 10s ease-in-out infinite;
+  }
+  .rba-ty-orb-2{
+    width:400px;
+    height:400px;
+    bottom:60px;
+    left:-120px;
+    background:radial-gradient(circle,rgba(166,124,166,0.09) 0%,rgba(222,148,0,0.04) 45%,transparent 70%);
+    animation:rba-ty-float 12s ease-in-out infinite reverse;
+  }
+  @keyframes rba-ty-float{
+    0%,100%{
+      transform:translateY(0) scale(1)}
+    50%{
+      transform:translateY(-24px) scale(1.04)}
+  }
+  /* ── MINI NAV ── */
+  .rba-ty-nav{
+    position:relative;
+    z-index:10;
+    padding:1.4rem 2rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-bottom:1px solid rgba(91,45,95,0.07);
+    background:rgba(255,251,245,0.85);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+  .rba-ty-brand{
+    font-family:'Onest',sans-serif;
+    font-size:1rem;
+    font-weight:900;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:#3d1542;
+    text-decoration:none;
+  }
+  .rba-ty-brand span{
+    background:linear-gradient(135deg,#a06000 0%,#de9400 35%,#f8c038 55%,#f0ac18 75%,#c27800 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  /* ── MAIN CONTENT ── */
+  .rba-ty-main{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:5rem 2rem 4rem;
+    position:relative;
+    z-index:1;
+  }
+  .rba-ty-inner{
+    max-width:720px;
+    width:100%;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0;
+  }
+  /* ── CHECKMARK BADGE ── */
+  .rba-ty-badge{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#a06000 0%,#de9400 35%,#f8c038 55%,#f0ac18 75%,#c27800 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 40px rgba(222,148,0,0.45),0 0 0 12px rgba(222,148,0,0.12),0 0 0 24px rgba(222,148,0,0.06);
+    margin-bottom:2rem;
+    animation:rba-ty-pop 0.65s cubic-bezier(0.34,1.56,0.64,1) both;
+  }
+  .rba-ty-badge svg{
+    width:42px;
+    height:42px;
+    stroke:#3d1542;
+    fill:none;
+    stroke-width:3;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:60;
+    stroke-dashoffset:60;
+    animation:rba-ty-draw 0.5s 0.5s ease forwards;
+  }
+  @keyframes rba-ty-pop{
+    from{
+      opacity:0;
+      transform:scale(0.4)}
+    to{
+      opacity:1;
+      transform:scale(1)}
+  }
+  @keyframes rba-ty-draw{
+    to{
+      stroke-dashoffset:0}
+  }
+  /* ── EYEBROW ── */
+  .rba-ty-eyebrow{
+    font-family:'Onest',sans-serif;
+    font-size:0.72rem;
+    font-weight:700;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    background:linear-gradient(135deg,#a06000 0%,#de9400 35%,#f8c038 55%,#f0ac18 75%,#c27800 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    margin-bottom:1rem;
+    animation:rba-ty-up 0.7s 0.3s ease both;
+  }
+  /* ── HEADING ── */
+  .rba-ty-title{
+    font-family:'Onest',sans-serif;
+    font-size:clamp(2.4rem,6vw,4.5rem);
+    font-weight:900;
+    line-height:1;
+    color:#5B2D5F;
+    letter-spacing:-0.025em;
+    margin-bottom:0.5rem;
+    animation:rba-ty-up 0.7s 0.45s ease both;
+  }
+  .rba-ty-title .rba-ty-gold{
+    display:block;
+    background:linear-gradient(135deg,#a06000 0%,#de9400 35%,#f8c038 55%,#f0ac18 75%,#c27800 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    filter:drop-shadow(0 2px 12px rgba(222,148,0,0.28));
+  }
+  /* ── SUB TEXT ── */
+  .rba-ty-sub{
+    font-family:'Onest',sans-serif;
+    font-size:clamp(1rem,2.2vw,1.25rem);
+    font-weight:400;
+    color:#6b3d70;
+    line-height:1.7;
+    max-width:560px;
+    margin:0 auto 2.5rem;
+    animation:rba-ty-up 0.7s 0.6s ease both;
+  }
+  /* ── DIVIDER ── */
+  .rba-ty-div{
+    width:70px;
+    height:3px;
+    background:linear-gradient(90deg,#c27800,#f8c038,#c27800);
+    border-radius:2px;
+    box-shadow:0 0 12px rgba(222,148,0,0.35);
+    margin:0 auto 2.5rem;
+    animation:rba-ty-up 0.7s 0.55s ease both;
+  }
+  /* ── JOIN WHATSAPP GROUP CARD ── */
+  .rba-ty-wa-card{
+    background:linear-gradient(135deg,rgba(37,211,102,0.10),rgba(255,255,255,0.75));
+    border:1.5px solid rgba(37,211,102,0.35);
+    border-radius:22px;
+    padding:2.5rem 2.5rem;
+    width:100%;
+    text-align:center;
+    box-shadow:0 8px 40px rgba(37,211,102,0.14);
+    margin-bottom:2.5rem;
+    animation:rba-ty-up 0.7s 0.7s ease both;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .rba-ty-wa-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:3px;
+    background:linear-gradient(90deg,#1ebe5d,#25D366,#5ef58f,#25D366,#1ebe5d);
+  }
+  .rba-ty-wa-icon{
+    width:64px;
+    height:64px;
+    border-radius:50%;
+    background:#25D366;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 6px 24px rgba(37,211,102,0.4);
+    margin-bottom:1.2rem;
+  }
+  .rba-ty-wa-icon svg{
+    width:34px;
+    height:34px;
+  }
+  .rba-ty-wa-title{
+    font-family:'Onest',sans-serif;
+    font-size:clamp(1.3rem,3vw,1.7rem);
+    font-weight:900;
+    color:#5B2D5F;
+    letter-spacing:-0.01em;
+    margin-bottom:0.6rem;
+    line-height:1.2;
+  }
+  .rba-ty-wa-desc{
+    font-family:'Onest',sans-serif;
+    font-size:1rem;
+    font-weight:400;
+    color:#6b3d70;
+    line-height:1.65;
+    max-width:460px;
+    margin:0 auto 1.8rem;
+  }
+  .rba-ty-wa-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:0.7rem;
+    background:#25D366;
+    color:#fff;
+    -webkit-text-fill-color:#fff;
+    padding:1.05rem 2.6rem;
+    border-radius:50px;
+    font-family:'Onest',sans-serif;
+    font-size:1rem;
+    font-weight:900;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    text-decoration:none;
+    border:1.5px solid #1ebe5d;
+    box-shadow:0 6px 24px rgba(37,211,102,0.45);
+    transition:transform 0.22s,box-shadow 0.22s;
+  }
+  .rba-ty-wa-btn svg{
+    width:20px;
+    height:20px;
+  }
+  .rba-ty-wa-btn:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 14px 40px rgba(37,211,102,0.6);
+  }
+  .rba-ty-wa-note{
+    font-family:'Onest',sans-serif;
+    font-size:0.78rem;
+    color:#6b3d70;
+    font-style:italic;
+    margin-top:0.9rem;
+  }
+  /* ── NEXT STEPS ── */
+  .rba-ty-steps{
+    width:100%;
+    text-align:left;
+    animation:rba-ty-up 0.7s 0.9s ease both;
+    margin-bottom:2.5rem;
+  }
+  .rba-ty-steps-title{
+    font-family:'Onest',sans-serif;
+    font-size:0.72rem;
+    font-weight:700;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:#A67CA6;
+    margin-bottom:1.2rem;
+    display:block;
+  }
+  .rba-ty-step-list{
+    display:flex;
+    flex-direction:column;
+    gap:0.8rem;
+    list-style:none;
+  }
+  .rba-ty-step-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:1rem;
+    font-family:'Onest',sans-serif;
+    font-size:0.92rem;
+    color:#3a1a3e;
+    line-height:1.55;
+  }
+  .rba-ty-stepnum{
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    flex-shrink:0;
+    background:linear-gradient(135deg,#a06000 0%,#de9400 35%,#f8c038 55%,#f0ac18 75%,#c27800 100%);
+    color:#3d1542;
+    font-family:'Onest',sans-serif;
+    font-size:0.72rem;
+    font-weight:900;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 2px 10px rgba(222,148,0,0.3);
+    margin-top:2px;
+  }
+  /* ── SHARE STRIP ── */
+  .rba-ty-share{
+    width:100%;
+    background:rgba(255,255,255,0.6);
+    border:1.5px solid rgba(91,45,95,0.1);
+    border-radius:18px;
+    padding:1.8rem 2rem;
+    text-align:center;
+    animation:rba-ty-up 0.7s 1.05s ease both;
+    margin-bottom:2.5rem;
+  }
+  .rba-ty-share-lbl{
+    font-family:'Onest',sans-serif;
+    font-size:0.88rem;
+    color:#6b3d70;
+    margin-bottom:1.2rem;
+  }
+  .rba-ty-share-lbl strong{
+    color:#5B2D5F}
+  .rba-ty-share-btns{
+    display:flex;
+    gap:0.8rem;
+    justify-content:center;
+    flex-wrap:wrap}
+  .rba-ty-sbtn{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    padding:0.6rem 1.4rem;
+    border-radius:50px;
+    font-family:'Onest',sans-serif;
+    font-size:0.82rem;
+    font-weight:700;
+    text-decoration:none;
+    border:1.5px solid transparent;
+    transition:transform 0.2s,box-shadow 0.2s,background 0.2s;
+  }
+  .rba-ty-sbtn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 24px rgba(91,45,95,0.15)}
+  .rba-ty-sbtn-wa{
+    background:#25D366;
+    color:#fff;
+    -webkit-text-fill-color:#fff;
+    border-color:#1ebe5d;
+  }
+  .rba-ty-sbtn-ig{
+    background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+    color:#fff;
+    -webkit-text-fill-color:#fff;
+  }
+  .rba-ty-sbtn-ln{
+    background:#0077b5;
+    color:#fff;
+    -webkit-text-fill-color:#fff;
+    border-color:#006097;
+  }
+  /* ── CTA BUTTON ── */
+  .rba-ty-cta-wrap{
+    animation:rba-ty-up 0.7s 1.2s ease both;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.7rem;
+  }
+  .rba-btn-gold{
+    display:inline-block;
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg,#a06000 0%,#de9400 35%,#f8c038 55%,#f0ac18 75%,#c27800 100%);
+    color:#3d1542;
+    padding:1.05rem 3rem;
+    border-radius:50px;
+    font-family:'Onest',sans-serif;
+    font-size:1rem;
+    font-weight:900;
+    letter-spacing:0.07em;
+    text-transform:uppercase;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    -webkit-text-fill-color:#3d1542;
+    box-shadow:0 4px 22px rgba(222,148,0,0.45),0 1px 0 rgba(255,255,255,0.4) inset,0 -2px 0 rgba(0,0,0,0.15) inset;
+    transition:transform 0.22s,box-shadow 0.22s;
+  }
+  .rba-btn-gold::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-80%;
+    width:55%;
+    height:100%;
+    background:linear-gradient(120deg,transparent 0%,rgba(255,255,255,0.65) 50%,transparent 100%);
+    transform:skewX(-22deg);
+    transition:left 0.55s ease;
+    pointer-events:none;
+  }
+  .rba-btn-gold:hover::before{
+    left:135%}
+  .rba-btn-gold:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 14px 44px rgba(222,148,0,0.65),0 0 70px rgba(248,192,56,0.35),0 1px 0 rgba(255,255,255,0.5) inset;
+  }
+  .rba-ty-cta-note{
+    font-family:'Onest',sans-serif;
+    font-size:0.78rem;
+    color:#A67CA6;
+    font-style:italic;
+  }
+  /* ── QUOTE BAND ── */
+  .rba-ty-quote{
+    background:linear-gradient(135deg,#3d1542 0%,#5B2D5F 100%);
+    padding:3.5rem 2rem;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .rba-ty-quote::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(222,148,0,0.08),transparent 70%);
+    pointer-events:none;
+  }
+  .rba-ty-qinner{
+    max-width:640px;
+    margin:0 auto;
+    position:relative;
+    z-index:1}
+  .rba-ty-qmark{
+    font-family:'Onest',sans-serif;
+    font-size:5rem;
+    line-height:0.5;
+    font-weight:900;
+    background:linear-gradient(135deg,#a06000 0%,#de9400 35%,#f8c038 55%,#f0ac18 75%,#c27800 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    display:block;
+    margin-bottom:1rem;
+    opacity:0.5;
+  }
+  .rba-ty-qtext{
+    font-family:'Onest',sans-serif;
+    font-size:clamp(1.1rem,2.5vw,1.5rem);
+    font-weight:700;
+    color:#fff8f0;
+    line-height:1.55;
+    margin-bottom:1rem;
+    font-style:italic;
+  }
+  .rba-ty-qattr{
+    font-family:'Onest',sans-serif;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    background:linear-gradient(135deg,#a06000 0%,#de9400 35%,#f8c038 55%,#f0ac18 75%,#c27800 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  /* ── FOOTER ── */
+  .rba-ty-footer{
+    background:#3d1542;
+    padding:2rem 2rem;
+    text-align:center;
+    border-top:1px solid rgba(222,148,0,0.15);
+  }
+  .rba-ty-fbrand{
+    font-family:'Onest',sans-serif;
+    font-size:1rem;
+    font-weight:900;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:#fff8f0;
+    margin-bottom:0.35rem;
+  }
+  .rba-ty-fbrand span{
+    background:linear-gradient(135deg,#a06000 0%,#de9400 35%,#f8c038 55%,#f0ac18 75%,#c27800 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .rba-ty-flinks{
+    display:flex;
+    gap:1.5rem;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-bottom:0.8rem;
+  }
+  .rba-ty-flinks a{
+    font-family:'Onest',sans-serif;
+    font-size:0.78rem;
+    color:rgba(255,248,240,0.45);
+    text-decoration:none;
+    transition:color 0.2s;
+  }
+  .rba-ty-flinks a:hover{
+    color:rgba(255,248,240,0.8)}
+  .rba-ty-fcopy{
+    font-family:'Onest',sans-serif;
+    font-size:0.72rem;
+    color:rgba(255,248,240,0.3);
+  }
+  /* ── ANIMATIONS ── */
+  @keyframes rba-ty-up{
+    from{
+      opacity:0;
+      transform:translateY(28px)}
+    to{
+      opacity:1;
+      transform:translateY(0)}
+  }
+  /* ── RESPONSIVE ── */
+  @media(max-width:600px){
+    .rba-ty-main{
+      padding:3.5rem 1.2rem 3rem}
+    .rba-ty-title{
+      font-size:2.4rem}
+    .rba-ty-wa-card{
+      padding:1.8rem 1.4rem}
+    .rba-ty-share{
+      padding:1.5rem 1.2rem}
+    .rba-ty-share-btns{
+      flex-direction:column;
+      align-items:center}
+    .rba-ty-sbtn{
+      width:100%;
+      max-width:240px;
+      justify-content:center}
+    .rba-ty-wa-btn{
+      padding:0.95rem 2rem;
+      font-size:0.92rem}
+    .rba-btn-gold{
+      padding:0.95rem 2rem;
+      font-size:0.92rem}
+    .rba-ty-quote{
+      padding:2.5rem 1.4rem}
+    .rba-ty-orb-1{
+      width:280px;
+      height:280px}
+    .rba-ty-orb-2{
+      width:220px;
+      height:220px}
+  }
+</style>
+</head>
+<body>
+<!-- ══ THANK YOU PAGE ══ -->
+<div class="rba-ty-page">
+  <!-- Orbs -->
+  <div class="rba-ty-orb rba-ty-orb-1">
+  </div>
+  <div class="rba-ty-orb rba-ty-orb-2">
+  </div>
+  <!-- Nav -->
+  <nav class="rba-ty-nav">
+    <a href="#" class="rba-ty-brand">Rise<span>Beyond</span>Autoimmune™</a>
+  </nav>
+  <!-- Main -->
+  <main class="rba-ty-main">
+    <div class="rba-ty-inner">
+      <!-- Checkmark -->
+      <div class="rba-ty-badge">
+        <svg viewBox="0 0 24 24">
+          <polyline points="4,12 9,17 20,6"/>
+        </svg>
+      </div>
+      <!-- Eyebrow -->
+      <p class="rba-ty-eyebrow">✦ You're In ✦
+      </p>
+      <!-- Title -->
+      <h1 class="rba-ty-title">
+        You're Registered!
+        <span class="rba-ty-gold">Welcome, Healer.</span>
+      </h1>
+      <!-- Join WhatsApp Group Button -->
+      <a href="#" class="rba-ty-wa-btn">
+        <svg viewBox="0 0 24 24" fill="#fff">
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.853L.057 23.428a.5.5 0 0 0 .614.614l5.595-1.468A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.853 0-3.587-.5-5.082-1.372l-.36-.214-3.742.981.998-3.648-.235-.374A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51z"/>
+        </svg>
+        Join WhatsApp Group
+      </a>
+      <!-- Divider -->
+      <div class="rba-ty-div" style="margin-top:2.5rem">
+      </div>
+      <!-- Sub -->
+      <p class="rba-ty-sub">
+        We are so glad you said yes to yourself. Your seat is confirmed for the
+        <strong>Rise Beyond Autoimmune</strong> live healing workshop.
+      </p>
+      <!-- Next Steps -->
+      <div class="rba-ty-steps">
+        <span class="rba-ty-steps-title">What Happens Next</span>
+        <ul class="rba-ty-step-list">
+          <li>
+            <span class="rba-ty-stepnum">1</span>
+            Tap the button above to join our private WhatsApp community right away.
+          </li>
+          <li>
+            <span class="rba-ty-stepnum">2</span>
+            Add the session to your calendar so you don't miss it — your healing matters.
+          </li>
+          <li>
+            <span class="rba-ty-stepnum">3</span>
+            Join the session 5 minutes early, find a quiet space, and come with an open heart.
+          </li>
+          <li>
+            <span class="rba-ty-stepnum">4</span>
+            Keep an eye on the WhatsApp group for your live link and all reminders.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="rba-ty-footer">
+    <p class="rba-ty-fbrand">Rise
+      <span>Beyond</span>Autoimmune™
+    </p>
+    <div class="rba-ty-flinks">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Refund Policy</a>
+    </div>
+    <p class="rba-ty-fcopy">© 2025 Aashima Dhingra · Inner Peace Reset™ · All rights reserved.
+    </p>
+  </footer>
+</div>
+</body>
+</html>

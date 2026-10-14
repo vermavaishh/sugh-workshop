@@ -1,0 +1,152 @@
+{
+  "name": "ScaleUp Genius Hub — Workshop Onboarding Automation",
+  "description": "Triggers when a new row is added to the Google Sheet (new registration). Sends WhatsApp via Interakt + Email via Brevo. Schedule reminders 24hr and 1hr before workshop.",
+  "flow": [
+    {
+      "id": 1,
+      "module": "google-sheets:watchRows",
+      "label": "Watch new registrations",
+      "parameters": {
+        "spreadsheetId": "PASTE_YOUR_GOOGLE_SHEET_ID_HERE",
+        "sheetId": "Sheet1",
+        "tableFirstRow": "A1",
+        "limit": 1
+      },
+      "note": "Triggers every 15 minutes. Replace spreadsheetId with your actual Sheet ID from the URL."
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicFeeder",
+      "label": "Parse registration data",
+      "parameters": {
+        "array": "{{1.values}}",
+        "mapping": {
+          "first_name":     "{{item[0]}}",
+          "last_name":      "{{item[1]}}",
+          "email":          "{{item[2]}}",
+          "phone":          "{{item[3]}}",
+          "workshop_date":  "{{item[4]}}",
+          "workshop_time":  "{{item[5]}}",
+          "zoom_link":      "{{item[6]}}"
+        }
+      },
+      "note": "Maps spreadsheet columns to named variables. Column order: A=First Name, B=Last Name, C=Email, D=Phone (with country code, e.g. 919876543210), E=Workshop Date, F=Workshop Time, G=Zoom Link"
+    },
+    {
+      "id": 3,
+      "module": "http:ActionSendData",
+      "label": "Send WhatsApp — Registration Confirmed",
+      "parameters": {
+        "url": "https://api.interakt.ai/v1/public/message/",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Authorization",
+            "value": "Basic PASTE_YOUR_INTERAKT_API_KEY_HERE"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "countryCode": "+91",
+          "phoneNumber": "{{2.phone}}",
+          "callbackData": "registration_confirmed",
+          "type": "Template",
+          "template": {
+            "name": "workshop_registration_confirmed",
+            "languageCode": "en",
+            "bodyValues": [
+              "{{2.first_name}}",
+              "{{2.workshop_date}}",
+              "{{2.workshop_time}}",
+              "{{2.zoom_link}}",
+              "YOUR_NAME_HERE"
+            ]
+          }
+        }
+      },
+      "note": "Replace PASTE_YOUR_INTERAKT_API_KEY_HERE with your actual key from Interakt → Settings → API. Replace YOUR_NAME_HERE with your actual name."
+    },
+    {
+      "id": 4,
+      "module": "brevo:sendTransactionalEmail",
+      "label": "Send Email — Registration Confirmation",
+      "parameters": {
+        "apiKey": "PASTE_YOUR_BREVO_API_KEY_HERE",
+        "to": [
+          {
+            "email": "{{2.email}}",
+            "name": "{{2.first_name}} {{2.last_name}}"
+          }
+        ],
+        "templateId": "PASTE_EMAIL_1_TEMPLATE_ID_HERE",
+        "params": {
+          "FIRSTNAME": "{{2.first_name}}",
+          "workshop_date": "{{2.workshop_date}}",
+          "workshop_time": "{{2.workshop_time}}",
+          "zoom_link": "{{2.zoom_link}}"
+        }
+      },
+      "note": "Get your Brevo API key from Brevo → Settings → API Keys. Get templateId after creating the template in Brevo → Email → Templates."
+    },
+    {
+      "id": 5,
+      "module": "brevo:addContactToList",
+      "label": "Add to Brevo automation list",
+      "parameters": {
+        "apiKey": "PASTE_YOUR_BREVO_API_KEY_HERE",
+        "email": "{{2.email}}",
+        "attributes": {
+          "FIRSTNAME": "{{2.first_name}}",
+          "LASTNAME": "{{2.last_name}}",
+          "workshop_date": "{{2.workshop_date}}",
+          "workshop_time": "{{2.workshop_time}}",
+          "zoom_link": "{{2.zoom_link}}"
+        },
+        "listId": "PASTE_YOUR_BREVO_LIST_ID_HERE"
+      },
+      "note": "This adds them to the list that triggers your 7-email automation in Brevo. Create the list in Brevo → Contacts → Lists first."
+    },
+    {
+      "id": 6,
+      "module": "google-sheets:updateRow",
+      "label": "Mark as processed in Sheet",
+      "parameters": {
+        "spreadsheetId": "PASTE_YOUR_GOOGLE_SHEET_ID_HERE",
+        "sheetId": "Sheet1",
+        "rowNumber": "{{1.rowNumber}}",
+        "values": {
+          "H": "SENT",
+          "I": "{{now}}"
+        }
+      },
+      "note": "Writes SENT in column H and the timestamp in column I so the same row doesn't trigger twice."
+    }
+  ],
+  "scheduling": {
+    "interval": 15,
+    "unit": "minutes"
+  },
+  "reminders": {
+    "note": "For 24hr and 1hr reminders, create TWO separate Make scenarios that run daily and check if workshop_date = tomorrow or workshop_date = today. Use the same WhatsApp API call with template names: workshop_reminder_24hr and workshop_reminder_1hr"
+  },
+  "setup_checklist": [
+    "1. Create Google Sheet using the template in google-sheet-template.md",
+    "2. Create Brevo account and get API key",
+    "3. Create email templates in Brevo (copy from email-sequence.md)",
+    "4. Create Brevo automation list and note the List ID",
+    "5. Create Interakt account and get API key",
+    "6. Submit WhatsApp templates in Interakt (copy from whatsapp-templates.md)",
+    "7. Wait for WhatsApp template approval (5-30 mins)",
+    "8. In Make, create a new scenario",
+    "9. Add Google Sheets module — Watch new rows",
+    "10. Add HTTP module for Interakt (copy JSON body from this file)",
+    "11. Add Brevo module for email",
+    "12. Add Google Sheets module to mark row as SENT",
+    "13. Set scenario to run every 15 minutes",
+    "14. Test with your own details",
+    "15. Turn ON"
+  ]
+}

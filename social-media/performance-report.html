@@ -1,0 +1,266 @@
+<title>SS Collections — One Month of Social Media Management</title>
+<style>
+  :root {
+    --ground: #141B2E;
+    --ground-2: #1C2540;
+    --card: #1A2238;
+    --line: #2C3654;
+    --cream: #F3EDE3;
+    --cream-soft: #B9BFD0;
+    --brass: #D4A843;
+    --madder: #D8564B;
+    --jade: #5FB88E;
+    --display: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+    --body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--cream);
+    font-family: var(--body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px 90px; }
+
+  /* ---- hero ---- */
+  .hero {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: 22px;
+  }
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--brass);
+  }
+  h1 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(34px, 6.2vw, 60px); line-height: 1.08;
+    margin: 0; text-wrap: balance; color: var(--cream);
+  }
+  h1 em { font-style: normal; color: var(--brass); }
+  .lede { font-size: 17px; color: var(--cream-soft); max-width: 60ch; margin: 0; }
+  .credit {
+    display: flex; flex-wrap: wrap; gap: 8px 30px; padding-top: 16px;
+    font-family: var(--mono); font-size: 12px; color: var(--cream-soft);
+  }
+  .credit b { color: var(--cream); font-weight: 500; }
+
+  /* ---- headline metric ---- */
+  .headline {
+    margin: 56px 0;
+    background: linear-gradient(150deg, var(--ground-2), var(--card));
+    border: 1px solid var(--line); border-radius: 6px;
+    padding: 44px 40px;
+    display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center;
+  }
+  @media (max-width: 620px) { .headline { grid-template-columns: 1fr; gap: 22px; padding: 32px 26px; } }
+  .bignum {
+    font-family: var(--mono); font-size: clamp(58px, 13vw, 104px);
+    font-weight: 700; line-height: .9; color: var(--brass);
+    font-variant-numeric: tabular-nums; letter-spacing: -.02em;
+  }
+  .bigcap { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--cream-soft); margin-top: 12px; }
+  .headline p { margin: 0; color: var(--cream-soft); font-size: 16px; }
+  .headline p strong { color: var(--cream); font-weight: 600; }
+
+  section { padding: 48px 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 20px; }
+  h2 { font-family: var(--display); font-weight: 400; font-size: 27px; margin: 0; color: var(--cream); text-wrap: balance; }
+  p { margin: 0; color: var(--cream-soft); max-width: 66ch; }
+  p strong { color: var(--cream); font-weight: 600; }
+
+  /* ---- stat grid ---- */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+  .stat {
+    background: var(--card); border: 1px solid var(--line); border-radius: 5px;
+    padding: 22px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .stat .label { font-family: var(--mono); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; color: var(--cream-soft); }
+  .stat .row { display: flex; align-items: baseline; gap: 10px; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  .stat .from { font-size: 19px; color: #6E7796; }
+  .stat .to { font-size: 34px; font-weight: 700; color: var(--cream); line-height: 1; }
+  .stat .gain { font-family: var(--mono); font-size: 12px; color: var(--jade); }
+  .stat .gain.brass { color: var(--brass); }
+
+  /* ---- reel views ---- */
+  .reels { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+  .reel {
+    background: var(--card); border: 1px solid var(--line); border-radius: 5px;
+    padding: 20px; text-align: center;
+  }
+  .reel .v { font-family: var(--mono); font-size: 36px; font-weight: 700; color: var(--brass); font-variant-numeric: tabular-nums; }
+  .reel .c { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--cream-soft); margin-top: 6px; }
+
+  /* ---- before/after ---- */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .compare { grid-template-columns: 1fr; } }
+  .panel { border-radius: 5px; padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+  .panel.was { background: transparent; border: 1px dashed var(--line); }
+  .panel.now { background: var(--card); border: 1px solid var(--brass); }
+  .panel h3 { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; margin: 0; color: #6E7796; }
+  .panel.now h3 { color: var(--brass); }
+  .bio { font-size: 14px; line-height: 1.8; white-space: pre-line; }
+  .panel.was .bio { color: #7C85A3; }
+  .panel.now .bio { color: var(--cream); }
+  .tick { font-size: 13px; color: var(--cream-soft); border-top: 1px solid var(--line); padding-top: 12px; }
+
+  /* ---- work log ---- */
+  .log { display: flex; flex-direction: column; gap: 0; }
+  .item {
+    display: grid; grid-template-columns: 26px 1fr; gap: 16px;
+    padding: 16px 0; border-bottom: 1px solid var(--line); align-items: start;
+  }
+  .item:last-child { border-bottom: none; }
+  .item .mark { color: var(--brass); font-size: 15px; line-height: 1.5; }
+  .item .txt { color: var(--cream-soft); font-size: 15px; }
+  .item .txt b { color: var(--cream); font-weight: 600; display: block; margin-bottom: 2px; }
+
+  .tablewrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 460px; }
+  th, td { text-align: left; padding: 12px 16px 12px 0; border-bottom: 1px solid var(--line); }
+  th { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--cream-soft); font-weight: 500; }
+  td { color: var(--cream-soft); }
+  td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--cream); white-space: nowrap; }
+  .tag { font-family: var(--mono); font-size: 10px; padding: 3px 8px; border-radius: 3px; border: 1px solid var(--line); color: var(--brass); white-space: nowrap; }
+
+  ul { margin: 0; padding-left: 22px; color: var(--cream-soft); display: flex; flex-direction: column; gap: 10px; }
+  li strong { color: var(--cream); font-weight: 600; }
+
+  .next { background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--brass); border-radius: 5px; padding: 26px 28px; display: flex; flex-direction: column; gap: 14px; }
+
+  footer { padding-top: 26px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 11px; color: #6E7796; }
+</style>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">Instagram Management · Results Report</div>
+    <h1>From a quiet page to <em>4,800 views a month</em></h1>
+    <p class="lede">One month of managed content for SS Collections — what the page looked like before, what it does now, and the work that got it there.</p>
+    <div class="credit">
+      <span><b>Account</b> @sscollections__2024</span>
+      <span><b>Period</b> 6 July – 3 August 2026</span>
+      <span><b>Managed by</b> Vaishnavi Verma</span>
+    </div>
+  </div>
+
+  <div class="headline">
+    <div>
+      <div class="bignum">4,800</div>
+      <div class="bigcap">Views in the last 30 days</div>
+    </div>
+    <p>The page has <strong>103 followers</strong> — and reached <strong>4,800 views in a month</strong>. That is roughly <strong>47 times the follower count</strong>, which means the content is being carried well beyond the existing audience and put in front of new people across Nagpur and beyond.</p>
+  </div>
+
+  <section>
+    <h2>The month in numbers</h2>
+    <div class="grid">
+      <div class="stat">
+        <div class="label">Posts published</div>
+        <div class="row"><span class="from">98</span><span style="color:#6E7796">→</span><span class="to">130</span></div>
+        <div class="gain">+32 posts in 28 days</div>
+      </div>
+      <div class="stat">
+        <div class="label">Followers</div>
+        <div class="row"><span class="from">86</span><span style="color:#6E7796">→</span><span class="to">103</span></div>
+        <div class="gain">+17 &nbsp;·&nbsp; +19.8%</div>
+      </div>
+      <div class="stat">
+        <div class="label">Order buttons on profile</div>
+        <div class="row"><span class="from">0</span><span style="color:#6E7796">→</span><span class="to">3</span></div>
+        <div class="gain">WhatsApp · Facebook · Contact</div>
+      </div>
+      <div class="stat">
+        <div class="label">Growth quality</div>
+        <div class="row"><span class="to">100%</span></div>
+        <div class="gain brass">organic — no follow-for-follow, no paid ads</div>
+      </div>
+    </div>
+    <p>Following count stayed at 106 throughout the month. Every new follower came from content people chose to engage with, not from follow-back tactics or paid promotion.</p>
+  </section>
+
+  <section>
+    <h2>Reels are carrying the page</h2>
+    <p>Reels reach people who do not yet follow the page — and these are landing at roughly three times the size of the entire follower base.</p>
+    <div class="reels">
+      <div class="reel"><div class="v">371</div><div class="c">views · one reel</div></div>
+      <div class="reel"><div class="v">292</div><div class="c">views · one reel</div></div>
+      <div class="reel"><div class="v">3×</div><div class="c">the follower count</div></div>
+    </div>
+    <p>For a boutique page of this size, single posts reaching several hundred non-followers is exactly what a growing account should look like. The reel-first strategy is doing its job.</p>
+  </section>
+
+  <section>
+    <h2>The profile, rebuilt</h2>
+    <p>The bio was the first fix. The old version ended by telling visitors what the shop would <em>not</em> do — the last thing someone read before deciding whether to follow. The new one leads with the offer and ends with a way to buy.</p>
+    <div class="compare">
+      <div class="panel was">
+        <h3>Before</h3>
+        <div class="bio">#1clothing
+Visit as a customer 😄, go as a friend 🤝
+Get the Trendiest Clothes 👗, Accesories
+COD 💵
+NO EXCHANGE 🚫 NO RETURN 🚫</div>
+        <div class="tick">No location · no way to order · ends on two refusals</div>
+      </div>
+      <div class="panel now">
+        <h3>After</h3>
+        <div class="bio">✨ Ethnic Wear — Trendiest Clothes &amp; Accessories 👗
+📲 DM or WhatsApp 8668955947 to order</div>
+        <div class="tick">Clear offer · direct order path · WhatsApp button live</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What was set up</h2>
+    <div class="log">
+      <div class="item"><div class="mark">◆</div><div class="txt"><b>WhatsApp ordering button</b>Customers now tap once from the profile straight into a chat with the shop. This did not exist before.</div></div>
+      <div class="item"><div class="mark">◆</div><div class="txt"><b>Contact button enabled</b>Direct call and message options added to the business profile.</div></div>
+      <div class="item"><div class="mark">◆</div><div class="txt"><b>Facebook page connected</b>The shop now appears across both platforms from one profile.</div></div>
+      <div class="item"><div class="mark">◆</div><div class="txt"><b>Store address on every post</b>Ram Nagar, Nagpur now appears in captions, so local customers know exactly where to walk in.</div></div>
+      <div class="item"><div class="mark">◆</div><div class="txt"><b>Nagpur hashtag strategy</b>Local tags added alongside category tags — a far smaller pool to compete in than national fashion hashtags, and the right audience for a walk-in store.</div></div>
+      <div class="item"><div class="mark">◆</div><div class="txt"><b>Daily posting rhythm established</b>The page moved from occasional posts to near-daily publishing, with a 30-day content calendar mapping reels and posts across the month.</div></div>
+      <div class="item"><div class="mark">◆</div><div class="txt"><b>Branded content designed</b>Festival campaign creatives, product cards and reels produced from the shop's own stock photography.</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Content published through the month</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Date</th><th>Format</th><th>Content</th></tr></thead>
+        <tbody>
+          <tr><td class="num">6 Jul</td><td><span class="tag">Reel</span></td><td>"When I say hmm" outfit montage</td></tr>
+          <tr><td class="num">7 Jul</td><td><span class="tag">Carousel</span></td><td>Co-ord set in three colourways</td></tr>
+          <tr><td class="num">8 Jul</td><td><span class="tag">Reel</span></td><td>Saree twirl — bandhani &amp; elephant motif</td></tr>
+          <tr><td class="num">9 Jul</td><td><span class="tag">Reel</span></td><td>"You don't need love" hook reel</td></tr>
+          <tr><td class="num">13 Jul</td><td><span class="tag">Reel</span></td><td>Shimmer tissue saree collection</td></tr>
+          <tr><td class="num">22 Jul</td><td><span class="tag">Reel</span></td><td>"Arey chahiye kya aurat ko?" partywear</td></tr>
+          <tr><td class="num">Ongoing</td><td><span class="tag">+26 more</span></td><td>Reels, carousels and festival creatives across the month</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where this goes next</h2>
+    <div class="next">
+      <p><strong>The hard part is already working.</strong> Getting a small page in front of thousands of new people is the difficult half, and it is happening — 4,800 views a month with no ad spend. The next phase is about turning more of that attention into followers and orders.</p>
+      <ul>
+        <li><strong>A consistent grid.</strong> One template, one type style and one colour family across designed posts so the page reads as a proper brand the moment someone lands on it.</li>
+        <li><strong>Plain-background product photos.</strong> Shooting against a plain wall instead of among the racks will lift every post — and costs nothing.</li>
+        <li><strong>A reason to follow, in the bio.</strong> A line like "new arrivals every week" gives visitors a reason to stay, not just a description of what is sold.</li>
+        <li><strong>Weekly content batch.</strong> Three or four videos and a set of photos every Monday keeps the rhythm unbroken — the one thing that reliably drives the numbers up.</li>
+        <li><strong>Track WhatsApp enquiries.</strong> Noting roughly how many orders come in each week turns the next report into a direct sales story.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    Figures taken from the account's Professional dashboard and profile, 6 July – 3 August 2026. @sscollections__2024 · Managed by Vaishnavi Verma
+  </footer>
+
+</div>
